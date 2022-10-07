@@ -109,7 +109,7 @@ export default function LoginScreen({ navigation }) {
 
             <View style={{ display: "flex", justifyContent:"center", flexDirection: "row",marginBottom:10,borderRadius:"10" }}>
               <TextInput
-                style={{ width: "70%" }}
+                style={{ width: "75%" }}
                 label="Email"
                 mode="outlined"
                 selectTextOnFocus={true}
@@ -132,7 +132,7 @@ export default function LoginScreen({ navigation }) {
 
             <View style={{ display: "flex", justifyContent:"center", flexDirection: "row",borderRadius:"10" }}>
               <TextInput
-                style={{ width: "70%" }}
+                style={{ width: "75%" }}
                 label="Password"
                 mode="outlined"
                 placeholder="Enter your password"

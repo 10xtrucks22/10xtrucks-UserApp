@@ -56,7 +56,7 @@ const InvoiceScreen = () => {
       <DataTable.Header>
         <DataTable.Title>Date</DataTable.Title>
         <DataTable.Title>Total</DataTable.Title>
-        <DataTable.Title numeric>Stats</DataTable.Title>
+        <DataTable.Title >Status</DataTable.Title>
         <DataTable.Title>Action</DataTable.Title>
       </DataTable.Header>
 

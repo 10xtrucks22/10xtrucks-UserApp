@@ -5,12 +5,7 @@ import { Button, Text, View } from "react-native";
 import { DataTable } from "react-native-paper";
 import { BASE_URL } from "../config";
 import createAuthStore from "../store/AuthStore";
-import RangeSlider from 'rn-range-slider';
-import Thumb from "../components/ranger/Thumb";
-import Rail from "../components/ranger/Rail";
-import RailSelected from "../components/ranger/RailSelected";
-import Label from "../components/ranger/Label";
-import Notch from "../components/ranger/Notch";
+
 
 
 
@@ -25,25 +20,6 @@ const PackageScreen = () => {
   const token = createAuthStore((state) => state.token);
   const [data, setData] = React.useState([]);
   const navigation = useNavigation();
-
-  const [low, setLow] = React.useState(0);
-  const [high, setHigh] = React.useState(1000);
-
-
-  const renderThumb = React.useCallback(() => <Thumb />, []);
-  const renderRail = React.useCallback(() => <Rail />, []);
-  const renderRailSelected = React.useCallback(() => <RailSelected />, []);
-  const renderLabel = React.useCallback(value => <Label text={value} />, []);
-  const renderNotch = React.useCallback(() => <Notch />, []);
-  const handleValueChange = React.useCallback((low, high) => {
-    setLow(low);
-    setHigh(high + 10);
-
-  }, [low, high]);
-
-
-
-
 
   const fetchData = async () => {
     try {
@@ -81,161 +57,7 @@ const PackageScreen = () => {
 
   return (
     <>
-      {/* <View style={{ flex: 1, paddingHorizontal: 20, maxHeight: 160 }}>
-        <View style={{ flex: 1, padding: 40, flexDirection: "column", justifyContent: "space-evenly" }}>
-          <View style={{ flex: 1, flexDirection: "row", justifyContent: "space-between", padding: 10 }}>
-            <View>
-              <Text
-                style={[
-                  { fontStyle: "italic" },
-                  { textAlign: "left", fontSize: 14 }
-                ]}
-              >
-                Min
-              </Text>
-              <Text
-                style={[{ fontWeight: "bold" }, { fontSize: 18, color: "#000000" }]}
-              >
-                {low}
-              </Text>
-            </View>
-            <View>
-              <Text
-                style={[
-                  { fontStyle: "italic" },
-                  { textAlign: "right", fontSize: 14 }
-                ]}
-              >
-                Max
-              </Text>
-              <Text
-                style={[{ fontWeight: "bold" }, { fontSize: 18, color: "#000000" }]}
-              >
-                {high}
-              </Text>
-            </View>
-          </View>
-          <RangeSlider
-            // style={styles.slider}
-            min={0}
-            max={100}
-            step={3}
-            minRange={20}
-            floatingLabel
-            renderThumb={renderThumb}
-            renderRail={renderRail}
-            renderRailSelected={renderRailSelected}
-            renderLabel={renderLabel}
-            renderNotch={renderNotch}
-            onValueChanged={handleValueChange}
-          />
-        </View>
-      </View> */}
-{/* 
-      <View style={{ flex: 1, paddingHorizontal: 20, maxHeight: 80, }}>
-        <View style={{ flex: 1, padding: 0,paddingHorizontal:40, flexDirection: "column", justifyContent: "space-evenly" }}>
-          <View style={{ flex: 1, flexDirection: "row", justifyContent: "space-between", padding: 0 }}>
-            <View>
-              <Text
-                style={[
-                  { fontStyle: "italic" },
-                  { textAlign: "left", fontSize: 14 }
-                ]}
-              >
-                Min
-              </Text>
-              <Text
-                style={[{ fontWeight: "bold" }, { fontSize: 18, color: "#000000" }]}
-              >
-                {low}
-              </Text>
-            </View>
-            <View>
-              <Text
-                style={[
-                  { fontStyle: "italic" },
-                  { textAlign: "right", fontSize: 14 }
-                ]}
-              >
-                Max
-              </Text>
-              <Text
-                style={[{ fontWeight: "bold" }, { fontSize: 18, color: "#000000" }]}
-              >
-                {high}
-              </Text>
-            </View>
-          </View>
-          <RangeSlider
-            // style={styles.slider}
-            min={0}
-            max={100}
-            step={3}
-            minRange={20}
-            floatingLabel
-            renderThumb={renderThumb}
-            renderRail={renderRail}
-            renderRailSelected={renderRailSelected}
-            renderLabel={renderLabel}
-            renderNotch={renderNotch}
-            onValueChanged={handleValueChange}
-          />
-        </View>
-      </View> */}
-{/* 
-      <View style={{ flex: 1, paddingHorizontal: 20, maxHeight: 160 }}>
-        <View style={{ flex: 1, padding: 40, flexDirection: "column", justifyContent: "space-evenly" }}>
-          <View style={{ flex: 1, flexDirection: "row", justifyContent: "space-between", padding: 10 }}>
-            <View>
-              <Text
-                style={[
-                  { fontStyle: "italic" },
-                  { textAlign: "left", fontSize: 14 }
-                ]}
-              >
-                Min
-              </Text>
-              <Text
-                style={[{ fontWeight: "bold" }, { fontSize: 18, color: "#000000" }]}
-              >
-                {low}
-              </Text>
-            </View>
-            <View>
-              <Text
-                style={[
-                  { fontStyle: "italic" },
-                  { textAlign: "right", fontSize: 14 }
-                ]}
-              >
-                Max
-              </Text>
-              <Text
-                style={[{ fontWeight: "bold" }, { fontSize: 18, color: "#000000" }]}
-              >
-                {high}
-              </Text>
-            </View>
-          </View>
-          <RangeSlider
-            // style={styles.slider}
-            min={0}
-            max={100}
-            step={3}
-            minRange={20}
-            floatingLabel
-            renderThumb={renderThumb}
-            renderRail={renderRail}
-            renderRailSelected={renderRailSelected}
-            renderLabel={renderLabel}
-            renderNotch={renderNotch}
-            onValueChanged={handleValueChange}
-          />
-        </View>
-      </View> */}
-
-
-
+  
 
 
       <DataTable>
