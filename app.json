@@ -18,18 +18,19 @@
       "**/*"
     ],
     "ios": {
+      "buildNumber": "1.0.0",
       "supportsTablet": true,
-      "bundleIdentifier": "user.trucks",
       "config": {
         "googleMapsApiKey": "AIzaSyBvmhx8TzRvMn2knRFl8HzcSSKDhxyffOI"
       }
     },
     "android": {
+      "package": "user.truck",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "user.trucks",
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyBvmhx8TzRvMn2knRFl8HzcSSKDhxyffOI"
