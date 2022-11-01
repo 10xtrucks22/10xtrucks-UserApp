@@ -31,6 +31,22 @@ export default function HomeScreen({ navigation }) {
 
   const width = Dimensions.get('window').width;
 
+  const images = [
+    {
+      id: 1,
+      image: require('./../assets/images/img1.jpg'),
+
+    },
+    {
+      id: 2,
+      image: require('./../assets/images/about.jpg'),
+    },
+    {
+      id: 3,
+      image: require('./../assets/images/load.png'),
+    },
+  ]
+
   const data = [
     {
       id: "1",
@@ -83,29 +99,29 @@ export default function HomeScreen({ navigation }) {
                 width={width}
                 height={width / 2}
                 autoPlay={true}
-                data={[...new Array(6).keys()]}
+                data={images}
                 scrollAnimationDuration={1000}
                 onSnapToItem={(index) => {
                     // console.log('current index:', index)
                 }}
                 
-                renderItem={({ index }) => (
+                renderItem={({item, index }) => (
+                  <>
                     <View
+                        key={index}
                         style={{
                             flex: 1,
                             // borderWidth: 1,
                             justifyContent: 'center',
                         }}
                     >
-                        {/* <Text style={{ textAlign: 'center', fontSize: 30 }}>
-                           
-                        </Text> */}
                         <Image
-                            source={require('./../assets/images/ride.png')}
-                            style={{ width: '100%', height: '100%', resizeMode: 'contain' }}
+                            source={item.image}
+                            style={{ width: '100%', height: '100%', resizeMode: 'cover' }}
                         />
 
                     </View>
+                    </>
                 )}
             />
         </View>
