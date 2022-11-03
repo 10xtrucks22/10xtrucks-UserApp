@@ -124,6 +124,7 @@ export default function NewPackageScreen({ navigation }) {
     try {
       // axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
+      console.log(startDescription,endDescription);
       const url = `${BASE_URL}/api/user/packages`;
       // console.log(url)
       const header = {
@@ -211,6 +212,8 @@ export default function NewPackageScreen({ navigation }) {
             <View style={{ flex: 1,marginTop:30, backgroundColor: "#fff"   }}>
               <ScrollView style={{ flex: 1, backgroundColor: "#fff" }}
                 nestedScrollEnabled={true}
+                keyboardShouldPersistTaps='handled'
+                      listViewDisplayed={false}
               >
 
                 <View style={tw`px-4`}>
@@ -232,6 +235,7 @@ export default function NewPackageScreen({ navigation }) {
                       nestedScrollEnabled={true}
                       showsHorizontalScrollIndicator={false}
                       keyboardShouldPersistTaps='handled'
+                      listViewDisplayed={false}
                       contentContainerStyle={{
                         flexGrow: 1,
                         justifyContent: 'center',
@@ -242,8 +246,11 @@ export default function NewPackageScreen({ navigation }) {
                       style={{
                         width: "100%",
                       }}
+                      keyboardShouldPersistTaps='handled'
+                      listViewDisplayed={false}
                       >
                       <GooglePlacesAutocomplete
+                       listViewDisplayed={false}
                         placeholder={
                           startDescription ? startDescription : "Pick Up Location"
                         }
@@ -252,6 +259,7 @@ export default function NewPackageScreen({ navigation }) {
                         onPress={(data, details = null) => {
                           setStartLocation(details.geometry.location);
                           setStartDescription(data.description);
+                          // console.log(details);
                         }}
                         fetchDetails={true}
                         minLength={2}

@@ -8,10 +8,8 @@ import MapScreen from "../screens/MapScreen";
 import InvoiceScreen from "../screens/InvoiceScreen";
 import TripsScreen from "../screens/TripsScreen";
 
-import NewParcelScreen from "../screens/NewParcelScreen";
 import NewPackageScreen from "../screens/NewPackageScreen";
 import PackageScreen from "../screens/PackageScreen";
-import ParcelScreen from "../screens/ParcelScreen";
 import InvoiceDetailsScreen from "../screens/InvoiceDetailsScreen";
 import TripDetailsScreen from "../screens/TripDetailsScreen";
 import createAuthStore from "../store/AuthStore";
