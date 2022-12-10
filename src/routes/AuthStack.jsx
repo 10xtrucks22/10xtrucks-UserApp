@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator();
 const AuthStack = () => {
   return (
     <Stack.Navigator>
-       <Stack.Screen name="Welcome" component={SplashScreen}
+       {/* <Stack.Screen name="Welcome" component={SplashScreen}
       options={{
           
           headerStyle: {
@@ -26,7 +26,7 @@ const AuthStack = () => {
           headerTitleStyle: {
             fontWeight: "bold",
           },
-        }}/>
+        }}/> */}
       <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login Here', headerStyle: {
             backgroundColor: primary,
           },
